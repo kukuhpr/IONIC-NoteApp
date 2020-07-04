@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="closeModal()">
+      <ion-icon name="close"></ion-icon>
+    </ion-buttons>
+    <ion-title>Select Tag</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-radio-group (ionChange)="selectTag($event)">
+      <ion-item *ngFor="let tag of tags">
+        <ion-icon [color]="tag.color" [name]="tag.icon"></ion-icon>
+        <ion-label>{{tag.name}}</ion-label>
+        <ion-radio slot="end" [value]="tag.name"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
